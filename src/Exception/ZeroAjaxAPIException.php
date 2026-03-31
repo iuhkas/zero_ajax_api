@@ -10,7 +10,7 @@ class ZeroAjaxAPIException extends Exception {
   protected $type;
   protected $more = [];
 
-  public function __construct(string $type, $message = '', $code = 0, Throwable|null $previous = null) {
+  public function __construct(string $type, $message = '', $code = 0, ?Throwable $previous = null) {
     parent::__construct($message, $code, $previous);
     $this->type = 'error.' . $type;
   }

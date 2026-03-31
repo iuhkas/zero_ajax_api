@@ -44,7 +44,7 @@ class ZeroAjaxAPIController extends ControllerBase {
     }
   }
 
-  public function error(string $message, int $code = 500, array|null $additionals = NULL, $invoke = []): JsonResponse {
+  public function error(string $message, int $code = 500, ?array $additionals = NULL, $invoke = []): JsonResponse {
     $value = [
       'message' => $message,
     ];

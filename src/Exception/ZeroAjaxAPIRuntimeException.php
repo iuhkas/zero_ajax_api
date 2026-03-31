@@ -8,7 +8,7 @@ class ZeroAjaxAPIRuntimeException extends ZeroAjaxAPIException {
 
   private $usererror = NULL;
 
-  public function __construct(string $type, $message = '', $code = 0, Throwable|null $previous = null) {
+  public function __construct(string $type, $message = '', $code = 0, ?Throwable $previous = null) {
     parent::__construct('runtime.' . $type, $message, $code, $previous);
   }
 

@@ -74,11 +74,11 @@ class ZeroAjaxRequest {
     return $this;
   }
 
-  public function throwError(string $message, array|null $info = NULL, string|null $user_error = NULL) {
+  public function throwError(string $message, ?array $info = NULL, ?string $user_error = NULL) {
     throw $this->createError($message, $info, $user_error);
   }
 
-  public function createError(string $message, array|null $info = NULL, string|null $user_error = NULL): ZeroAjaxAPIRuntimeException {
+  public function createError(string $message, ?array $info = NULL, ?string $user_error = NULL): ZeroAjaxAPIRuntimeException {
     $error = new ZeroAjaxAPIRuntimeException('plugin.' . $this->definition['id'], $message, 500);
     if ($info !== NULL) {
       foreach ($info as $item) {

@@ -6,7 +6,7 @@ use Throwable;
 
 class ZeroAjaxAPIDefinitionException extends ZeroAjaxAPIException {
 
-  public function __construct(string $type, $message = '', $code = 0, Throwable|null $previous = null) {
+  public function __construct(string $type, $message = '', $code = 0, ?Throwable $previous = null) {
     parent::__construct('definition.' . $type, $message, $code, $previous);
   }
 
